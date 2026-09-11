@@ -1,34 +1,32 @@
-const tabLinks = document.querySelectorAll(".tab-links");
-const tabContents = document.querySelectorAll(".tab-contents");
-
-function opentab(tabname, el) {
-  tabLinks.forEach((link) => link.classList.remove("active"));
-  tabContents.forEach((content) => content.classList.remove("active"));
-  el.classList.add("active");
-  document.getElementById(tabname).classList.add("active");
-}
+const body = document.body;
 
 const themeBtn = document.getElementById("mode-toggle");
 
 function applyThemeIcon() {
-  const isLight = document.body.classList.contains("light-mode");
+  if (!themeBtn) return;
+  const isLight = body.classList.contains("light-mode");
   themeBtn.textContent = isLight ? "🌙" : "☀️";
   themeBtn.setAttribute("aria-label", isLight ? "Switch to dark mode" : "Switch to light mode");
 }
 
 if (localStorage.getItem("theme") === "light") {
-  document.body.classList.add("light-mode");
+  body.classList.add("light-mode");
 }
 applyThemeIcon();
 
 themeBtn.addEventListener("click", () => {
-  const isLight = document.body.classList.toggle("light-mode");
+  const isLight = body.classList.toggle("light-mode");
   localStorage.setItem("theme", isLight ? "light" : "dark");
   applyThemeIcon();
 });
 
 const typedText = document.getElementById("typedText");
-const roles = ["Software Developer", "Web Designer", "App Developer", "Game Developer"];
+const roles = [
+  "Software Engineering Student",
+  "Aspiring Software Engineer",
+  "Web & Mobile App Developer",
+  "Game Development Enthusiast",
+];
 let roleIndex = 0;
 let charIndex = 0;
 let deleting = false;
@@ -37,7 +35,7 @@ function typeLoop() {
   const word = roles[roleIndex];
   typedText.textContent = word.slice(0, charIndex);
 
-  let delay = deleting ? 40 : 90;
+  let delay = deleting ? 38 : 88;
 
   if (!deleting && charIndex === word.length) {
     delay = 2000;
@@ -45,7 +43,7 @@ function typeLoop() {
   } else if (deleting && charIndex === 0) {
     deleting = false;
     roleIndex = (roleIndex + 1) % roles.length;
-    delay = 400;
+    delay = 450;
   } else {
     charIndex += deleting ? -1 : 1;
   }
@@ -54,8 +52,26 @@ function typeLoop() {
 }
 typeLoop();
 
+const tabButtons = document.querySelectorAll(".tab-btn");
+const timelinePanels = document.querySelectorAll(".timeline-panel");
+
+tabButtons.forEach((btn) =>
+  btn.addEventListener("click", () => {
+    tabButtons.forEach((b) => {
+      b.classList.remove("active");
+      b.setAttribute("aria-selected", "false");
+    });
+    btn.classList.add("active");
+    btn.setAttribute("aria-selected", "true");
+
+    timelinePanels.forEach((panel) => {
+      panel.hidden = panel.id !== btn.dataset.tab;
+    });
+  })
+);
+
 const scrollProgress = document.getElementById("scrollProgress");
-const navbar = document.getElementById("navbar");
+const siteHeader = document.getElementById("siteHeader");
 const backToTop = document.getElementById("backToTop");
 
 const navLinks = document.querySelectorAll(".nav-link");
@@ -67,23 +83,29 @@ function onScroll() {
   const scrolled = doc.scrollTop / (doc.scrollHeight - doc.clientHeight || 1);
   scrollProgress.style.width = scrolled * 100 + "%";
 
-  navbar.classList.toggle("scrolled", window.scrollY > 40);
+  siteHeader.classList.toggle("scrolled", window.scrollY > 30);
   backToTop.classList.toggle("show", window.scrollY > 600);
 
   let currentId = sectionIds[0];
   sections.forEach((section, index) => {
-    if (window.scrollY >= section.offsetTop - 160) {
+    if (section && window.scrollY >= section.offsetTop - 170) {
       currentId = sectionIds[index];
     }
   });
 
-  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 60) {
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 80) {
     currentId = sectionIds[sectionIds.length - 1];
   }
 
-  navLinks.forEach((link) =>
-    link.classList.toggle("active", link.getAttribute("href") === "#" + currentId)
-  );
+  navLinks.forEach((link) => {
+    const isActive = link.getAttribute("href") === "#" + currentId;
+    link.classList.toggle("active-link", isActive);
+    if (isActive) {
+      link.setAttribute("aria-current", "true");
+    } else {
+      link.removeAttribute("aria-current");
+    }
+  });
 }
 
 window.addEventListener("scroll", onScroll, { passive: true });
@@ -95,71 +117,63 @@ backToTop.addEventListener("click", () => {
 
 const menuToggle = document.getElementById("menuToggle");
 const navClose = document.getElementById("navClose");
-const navMenu = document.getElementById("nav-menu");
+const navList = document.getElementById("navList");
 
-menuToggle.addEventListener("click", () => navMenu.classList.add("open"));
-navClose.addEventListener("click", () => navMenu.classList.remove("open"));
-navLinks.forEach((link) =>
-  link.addEventListener("click", () => navMenu.classList.remove("open"))
-);
+function setMenu(open) {
+  navList.classList.toggle("open", open);
+  body.classList.toggle("nav-open", open);
+  menuToggle.setAttribute("aria-expanded", String(open));
+}
 
-const intersectObserver = new IntersectionObserver(
+menuToggle.addEventListener("click", () => setMenu(!navList.classList.contains("open")));
+navClose.addEventListener("click", () => setMenu(false));
+navLinks.forEach((link) => link.addEventListener("click", () => setMenu(false)));
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && navList.classList.contains("open")) {
+    setMenu(false);
+    menuToggle.focus();
+  }
+});
+
+const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
-        intersectObserver.unobserve(entry.target);
+        revealObserver.unobserve(entry.target);
       }
     });
   },
-  { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+  { threshold: 0.12, rootMargin: "0px 0px -48px 0px" }
 );
 
 document.querySelectorAll(".reveal").forEach((el) => {
   if (el.dataset.delay) {
     el.style.transitionDelay = el.dataset.delay + "ms";
   }
-  intersectObserver.observe(el);
+  revealObserver.observe(el);
 });
 
 const filterButtons = document.querySelectorAll(".filter-btn");
-const works = document.querySelectorAll(".work");
+const projectCards = document.querySelectorAll(".project-card");
 
 filterButtons.forEach((btn) =>
   btn.addEventListener("click", () => {
-    filterButtons.forEach((b) => b.classList.remove("active"));
+    filterButtons.forEach((b) => {
+      b.classList.remove("active");
+      b.setAttribute("aria-pressed", "false");
+    });
     btn.classList.add("active");
+    btn.setAttribute("aria-pressed", "true");
 
     const category = btn.dataset.filter;
-    works.forEach((work) => {
-      const show = category === "all" || work.dataset.category === category;
-      work.classList.toggle("hide", !show);
+    projectCards.forEach((card) => {
+      const show = category === "all" || card.dataset.category === category;
+      card.classList.toggle("hide", !show);
     });
   })
 );
-
-const cursorGlow = document.getElementById("cursorGlow");
-
-if (window.matchMedia("(pointer: fine)").matches) {
-  let targetX = window.innerWidth / 2;
-  let targetY = window.innerHeight / 2;
-  let currentX = targetX;
-  let currentY = targetY;
-
-  window.addEventListener("mousemove", (e) => {
-    targetX = e.clientX;
-    targetY = e.clientY;
-  });
-
-  (function animateGlow() {
-    currentX += (targetX - currentX) * 0.12;
-    currentY += (targetY - currentY) * 0.12;
-    cursorGlow.style.transform = `translate(${currentX - 250}px, ${currentY - 250}px)`;
-    requestAnimationFrame(animateGlow);
-  })();
-} else {
-  cursorGlow.style.display = "none";
-}
 
 const contactForm = document.getElementById("contact-form");
 const toast = document.getElementById("toast");
@@ -176,15 +190,26 @@ if (contactForm) {
   contactForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
+    if (!contactForm.checkValidity()) {
+      contactForm.reportValidity();
+      return;
+    }
+
     const name = contactForm.Name.value.trim();
     const email = contactForm.Email.value.trim();
     const message = contactForm.Message.value.trim();
 
     const subject = encodeURIComponent("Portfolio message from " + name);
-    const body = encodeURIComponent(message + "\n\nFrom: " + email);
-    window.location.href = "mailto:prithiafrose@gmail.com?subject=" + subject + "&body=" + body;
+    const contactBody = encodeURIComponent(message + "\n\nFrom: " + email);
+    window.location.href =
+      "mailto:prithiafrose@gmail.com?subject=" + subject + "&body=" + contactBody;
 
     showToast("Opening your email app…");
     contactForm.reset();
   });
+}
+
+const yearEl = document.getElementById("year");
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
 }
