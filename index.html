@@ -3,186 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prithi Afrose</title>
+    <meta name="description" content="Portfolio of Prithi Afrose — Software Engineering student passionate about building web apps, mobile apps, and games.">
+    <title>Prithi Afrose | Software Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Prosto+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
     <script src="https://kit.fontawesome.com/3fbe008366.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <div class="bg-orbs" aria-hidden="true">
+        <span class="orb orb-1"></span>
+        <span class="orb orb-2"></span>
+        <span class="orb orb-3"></span>
+    </div>
+
     <div id="header">
-<div class="container">
-<nav>
-<img src="styles/image/logo.png" alt="" class="logo">
-<ul>
-    <li><a href="#header">Home</a></li>
-        <li><a href="#about">About</a></li>
-    <li><a href="#portfolio">Portfolio</a></li>
-    <li><a href="#service">Services</a></li>
-    <li><a href="#contact">Contact</a></li>
-</ul>
-  <button id="mode-toggle" style="padding:8px 15px; cursor:pointer; background:#b71956; color:#fff; border:none; border-radius:5px;">🌙 Dark Mode</button>
+        <div class="container">
+            <nav id="navbar">
+                <img src="styles/image/logo.png" alt="Prithi Afrose logo" class="logo">
+                <ul id="nav-menu">
+                    <li><a href="#header" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#service" class="nav-link">Services</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li class="nav-close" id="navClose"><i class="fa-solid fa-xmark"></i></li>
+                </ul>
+                <div class="nav-actions">
+                    <button id="mode-toggle" class="theme-toggle" aria-label="Switch to light mode">☀️</button>
+                    <button class="menu-toggle" id="menuToggle" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+                </div>
+            </nav>
 
-</nav>
-<div class="content"><div class="header-text">
-    
-    <h1 class="up">Hello<span class="prosto-one-regular">.</span></h1>
-        <h2 class="down">I'm <span class="prosto-one-regular">Prithi</span> Afrose</h2>
-        <div class="line"></div>
-       
-    <p class="web">Software <span class="mozilla-headline">Devloper</span></p>
-</div>
-<div class="image">
+            <div class="content">
+                <div class="header-text">
+                    <p class="greeting reveal">Welcome to my portfolio</p>
+                    <h1 class="up prosto-one-regular reveal">Hello<span>.</span></h1>
+                    <h2 class="down reveal">I'm <span class="gradient-text">Prithi Afrose</span></h2>
+                    <div class="line reveal"></div>
+                    <p class="web reveal">I'm a <span id="typedText" class="typed-text"></span></p>
+                    <div class="hero-cta reveal">
+                        <a href="#portfolio" class="btn-primary">View My Work <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#contact" class="btn-ghost">Contact Me</a>
+                    </div>
+                </div>
+                <div class="image reveal">
+                    <img src="styles/image/WhatsApp Image 2025-07-10 at 03.20.37_e196142a.jpg" alt="Prithi Afrose" class="img">
+                </div>
+            </div>
+        </div>
+    </div>
 
-<img src="styles/image/WhatsApp Image 2025-07-10 at 03.20.37_e196142a.jpg" alt="" class="img">
-
-</div>
-</div>
-</div>
-</div>
     <div id="about">
         <div class="container">
             <div class="row">
-                <div class="col-1">
-                    <img src="styles/image/WhatsApp Image 2025-07-10 at 03.20.37_e196142a.jpg" alt="" class="img-1">
+                <div class="col-1 reveal">
+                    <img src="styles/image/WhatsApp Image 2025-07-10 at 03.20.37_e196142a.jpg" alt="Prithi Afrose" class="img-1">
                 </div>
                 <div class="col-2">
-                    <h1 class="sub-title">About Me</h1>
-                    <p class="description">I’m a <span id="soft">software engineering</span>  student passionate about building interactive <span>web apps</span> and mobile solutions<span >.</span>
-                         I enjoy learning new technologies and turning ideas into functional, <span>user-friendly</span> products.</p>
-                <div class="tab-titles">
-                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                    <p class="tab-links"onclick="opentab('experience')">Experience</p>
-                    <p class="tab-links"onclick="opentab('education')">Education</p>
-
-
+                    <h1 class="sub-title reveal">About Me</h1>
+                    <p class="description reveal">
+                        I'm a <span id="soft">software engineering</span> student passionate about building
+                        interactive <span>web apps</span> and mobile solutions<span>.</span>
+                        I enjoy learning new technologies and turning ideas into functional,
+                        <span>user-friendly</span> products.
+                    </p>
+                    <div class="tab-titles reveal">
+                        <p class="tab-links active" onclick="opentab('skills', this)">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience', this)">Experience</p>
+                        <p class="tab-links" onclick="opentab('education', this)">Education</p>
+                    </div>
+                    <div class="tab-contents active" id="skills">
+                        <ul>
+                            <li><span>Web Development</span><br>Building interactive web apps and responsive sites</li>
+                            <li><span>App Development</span><br>Building Android and iOS apps</li>
+                            <li><span>Game Development</span><br>Designing engaging game projects</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2023 - Currently</span><br>Post-Graduation at Shahjalal University of Science and Technology</li>
+                            <li><span>2024</span><br>Participated at National case competition Mindmaster 2.0</li>
+                            <li><span>2019</span><br>Participated at Math Olympiad</li>
+                            <li><span>2016</span><br>Participated at National Debate Competition</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2023 - Present</span><br>Bachelor in Software Engineering at Shahjalal University of Science and Technology</li>
+                            <li><span>2020 - 2022</span><br>HSC at Dinajpur Govt. College</li>
+                            <li><span>2011 - 2019</span><br>SSC at Dinajpur Govt. Girls' High School</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="tab-contents active-tab" id="skills">
-                    <ul>
-                        <li><span>Web Devlopment</span><br>Web App Devlopment</li>
-                           <li><span>App Devlopment</span><br>building Android/iOS app</li>
-                              <li><span>Game Devlopment</span><br>Building game project</li>
-                    </ul>
-                </div>
-                <div class="tab-contents" id="experience">
-    <ul>
-        <li><span>2023 - Current</span><br>Post-Graduation at Shahjalal Univarsity of Science and Technology</li>
-        <li><span>2024</span><br>Participate at National case competition Matermind 2.0 </li>
-        <li><span>2019</span><br>Participate at Math Olympiad</li>
-        <li><span>2016</span><br>Participate at national Debate Competition</li>
-    </ul>
-</div>
-
-<div class="tab-contents" id="education">
-    <ul>
-        <li><span>2023 - Present</span><br>Bachelor in Software Engineering at Shahjalal Univarsity of Science and Technology</li>
-        <li><span>2020 - 2022</span><br>HSC at Dinajpur Govt. College</li>
-        <li><span>2011-2019</span><br>SSC at Dinajpur Govt. Girls' High School</li>
-    </ul>
-</div>
-                        </div>
             </div>
         </div>
     </div>
+
     <div id="service">
         <div class="container">
-            <h1 class="sub-title"> My Services</h1>
+            <h1 class="sub-title reveal">My Services</h1>
             <div class="service-list">
-                <div>
+                <div class="service-card reveal">
                     <i class="fa-solid fa-code"></i>
                     <h2>Web Design</h2>
-                    <p>I create user-friendly, responsive, 
-                        and visually appealing websites that help your business establish a strong online presence.</p>
-                    <a href="https://github.com/prithiafrose/project-111">Learn More</a>
+                    <p>I create user-friendly, responsive, and visually appealing websites that help your business establish a strong online presence.</p>
+                    <a href="https://github.com/prithiafrose/project-111">Learn More <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
-                  <div>
+                <div class="service-card reveal" data-delay="100">
                     <i class="fa-brands fa-app-store"></i>
                     <h2>App Development</h2>
-                    <p>I develop custom mobile apps for both Android and iOS platforms,
-                         making it easy for your customers to access your services or products.</p>
-                    <a href="https://github.com/prithiafrose/MyprojectElevatex">Learn More</a>
+                    <p>I develop custom mobile apps for both Android and iOS platforms, making it easy for your customers to access your services or products.</p>
+                    <a href="https://github.com/prithiafrose/MyprojectElevatex">Learn More <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
-                  <div>
-   <i class="fa-solid fa-gamepad"></i>                    
-      <h2>Game Development</h2>
-                    <p>I design creative and engaging games using the latest technology
-                         to provide entertainment and keep users hooked.</p>
-                    <a href="https://github.com/prithiafrose/BlackJack">Learn More</a>
+                <div class="service-card reveal" data-delay="200">
+                    <i class="fa-solid fa-gamepad"></i>
+                    <h2>Game Development</h2>
+                    <p>I design creative and engaging games using the latest technology to provide entertainment and keep users hooked.</p>
+                    <a href="https://github.com/prithiafrose/BlackJack">Learn More <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </div>
+
     <div id="portfolio">
-<div class="container">
-   <h1 class="sub-title">My Work</h1> 
-<div class="work-list">
-    <div class="work">
-        <img src="styles/image/work-1.jpg" alt="" >
-        <div class="layer">
-            <h3 class="mozilla-headline">Shopping Website</h3>
-            <p>In this website you can see different vegetables and thier prices,
-                Also buy them from the website.Checkout here </p>
-                <a href="https://github.com/prithiafrose/shop"><i class="fa-solid fa-up-right-from-square"></i></a>
+        <div class="container">
+            <h1 class="sub-title reveal">My Work</h1>
+            <div class="filters reveal">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Apps</button>
+                <button class="filter-btn" data-filter="app">Mobile Apps</button>
+                <button class="filter-btn" data-filter="game">Games</button>
+            </div>
+            <div class="work-list reveal">
+                <div class="work" data-category="web">
+                    <img src="styles/image/work-1.jpg" alt="Shopping website project">
+                    <div class="layer">
+                        <h3>Shopping Website</h3>
+                        <p>Browse vegetables and their prices, and buy them right from the website. Check it out!</p>
+                        <a href="https://github.com/prithiafrose/shop" aria-label="Shopping website source code"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work" data-category="app">
+                    <img src="styles/image/work-2.jpg" alt="Job searching app project">
+                    <div class="layer">
+                        <h3>Job Searching App</h3>
+                        <p>The app helps you find your desired job according to your skills and qualifications.</p>
+                        <a href="https://github.com/prithiafrose/MyprojectElevatex" aria-label="Job searching app source code"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work" data-category="game">
+                    <img src="styles/image/work-3.jpg" alt="Snake game project">
+                    <div class="layer">
+                        <h3>Snake Game</h3>
+                        <p>Experience thrilling adventures in this classic game remake. Download it here.</p>
+                        <a href="https://github.com/prithiafrose/SNAKE_GAME-2.0" aria-label="Snake game source code"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="https://github.com/prithiafrose" class="btn reveal">See More on GitHub</a>
         </div>
     </div>
-    <div class="work">
-        <img src="styles/image/work-2.jpg" alt="">
-         <div class="layer">
-            <h3 class="mozilla-headline">Job searching App</h3>
-            <p>The app help you to find your desired job accoring to your skills and qualifications.
-                Download it from play store</p>
-                <a href="https://github.com/prithiafrose/MyprojectElevatex"><i class="fa-solid fa-up-right-from-square"></i></a>
-        </div>
-    </div>
-    <div class="work">
-        <img src="styles/image/work-3.jpg" alt="">
-         <div class="layer">
-            <h3 class="mozilla-headline">Snake Game</h3>
-            <p>In this game, you can experience thrilling adventures. Download it here.</p>
-                <a href="https://github.com/prithiafrose/SNAKE_GAME-2.0"><i class="fa-solid fa-up-right-from-square"></i></a>
-        </div>
-    </div>
-</div>
-<a href="#" class="btn">See More</a>
 
-
-</div>
-    </div>
     <div id="contact">
         <div class="container">
             <div class="row">
-                <div class="contact-left">
-                 <h1 class="sub-title">Contact Me</h1>
- <p> <i class="fa-regular fa-envelope"></i>Prithiafrose@gmail.com</p>
-                 <p><i class="fa-solid fa-phone-volume"></i>01747863344</p>
-                 <div class="social-media">
-                    <a href="https://www.facebook.com/share/14NHTLLkyXZ/"><i class="fa-brands fa-square-facebook"></i></a>
-                    <a href="https://www.instagram.com/prithi_afroz?igsh=MXNidDZyeG5qbzFmdw=="><i class="fa-brands fa-square-instagram"></i></a>
-                 <a href="https://github.com/prithiafrose"><i class="fa-brands fa-square-github"></i></a>
-                                     <a href="https://www.snapchat.com/add/prithiafrose"><i class="fa-brands fa-square-snapchat"></i></a>
-
-
-
-                 </div>
-                 <a href="styles/image/prithi_afrose_colorful_cv.pdf" download class="btn2">Download CV</a>
-                 
+                <div class="contact-left reveal">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-regular fa-envelope"></i>Prithiafrose@gmail.com</p>
+                    <p><i class="fa-solid fa-phone-volume"></i>01747863344</p>
+                    <div class="social-media">
+                        <a href="https://www.facebook.com/share/14NHTLLkyXZ/" aria-label="Facebook"><i class="fa-brands fa-square-facebook"></i></a>
+                        <a href="https://www.instagram.com/prithi_afroz?igsh=MXNidDZyeG5qbzFmdw==" aria-label="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
+                        <a href="https://github.com/prithiafrose" aria-label="GitHub"><i class="fa-brands fa-square-github"></i></a>
+                        <a href="https://www.snapchat.com/add/prithiafrose" aria-label="Snapchat"><i class="fa-brands fa-square-snapchat"></i></a>
+                    </div>
+                    <a href="styles/image/prithi_afrose_colorful_cv.pdf" download class="btn2">Download CV <i class="fa-solid fa-download"></i></a>
                 </div>
-                <div class="contact-right">
-                    <form>
+                <div class="contact-right reveal" data-delay="100">
+                    <form id="contact-form">
                         <input type="text" name="Name" placeholder="Your name" required autocomplete="name">
-                         <input type="text" name="Email" placeholder="Your Email" required autocomplete="email">
-                         <textarea name="Message" rows="6" placeholder="Your Message"required></textarea>
-                         <button type="submit" class="btn2">Submit</button>
-
+                        <input type="email" name="Email" placeholder="Your Email" required autocomplete="email">
+                        <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn2">Submit <i class="fa-solid fa-paper-plane"></i></button>
                     </form>
-
                 </div>
             </div>
         </div>
-       
     </div>
-     <div class="copyright">
-            <p>Copyright @Prithi.Made with<i class="fa-solid fa-heart-circle-bolt"></i> by Prithi</p>
-        </div>
-       <script src="script.js"></script>
- 
+
+    <div class="copyright">
+        <p>Copyright © Prithi. Made with <i class="fa-solid fa-heart-circle-bolt"></i> by Prithi</p>
+    </div>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
