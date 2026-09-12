@@ -15,11 +15,20 @@ export function ProjectCover({ project, className = "" }) {
         }}
       />
       <Icon name={project.title === "EduCore" ? "graduation" : project.title === "PrepAI" ? "brain" : "rocket"} size={26} className="absolute right-4 top-4 text-accent/70" />
-      <div className="relative flex h-full w-full items-center justify-center">
-        <span className="font-display text-5xl font-bold text-gradient sm:text-6xl">
-          {project.title.slice(0, 2)}
-        </span>
-      </div>
+      {project.image ? (
+        <img
+          src={project.image}
+          alt={`${project.title} project screenshot`}
+          loading="lazy"
+          className="relative h-full w-full object-cover"
+        />
+      ) : (
+        <div className="relative flex h-full w-full items-center justify-center">
+          <span className="font-display text-5xl font-bold text-gradient sm:text-6xl">
+            {project.title.slice(0, 2)}
+          </span>
+        </div>
+      )}
     </div>
   );
 }

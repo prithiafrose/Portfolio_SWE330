@@ -261,7 +261,7 @@ export const projects = [
     category: "web",
     featured: true,
     badge: "Featured",
-    image: "_legacy/styles/image/Screenshot 2026-09-13 013334.png",
+    image: "/images/educore.png",
     description:
       "Full-stack university management platform handling academics, administration, and student lifecycle, secured with JWT role-based access and an OpenAI-powered assistant.",
     features: [
@@ -283,7 +283,7 @@ export const projects = [
     category: "web",
     featured: true,
     badge: "Featured",
-    image: "/_legacy/styles/image/Screenshot 2026-09-13 013215.png",
+    image: "/images/prepai.png",
     description:
       "Full-stack AI mock interview platform with role-based question generation, adaptive difficulty, OpenAI scoring, and a readiness analytics dashboard.",
     features: [
@@ -305,7 +305,7 @@ export const projects = [
     category: "web",
     featured: true,
     badge: "Featured",
-    image: "_legacy/styles/image/Screenshot 2026-09-13 013307.png",
+    image: "/images/hireway.png",
     description:
       "Full-stack job platform with search, applications, and role-based dashboards for Students, Recruiters, and Admins, plus an OpenAI-powered bilingual chatbot.",
     features: [
