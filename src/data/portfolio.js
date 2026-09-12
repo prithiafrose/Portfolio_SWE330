@@ -1,7 +1,7 @@
 export const personal = {
   name: "Prithi Afrose",
   firstName: "Prithi",
-  role: "Web Developer",
+  role: "Full Stack Developer,AI/ML Enthusiast,Software Engineer,MERN Stack Developer, React Developer, Node.js Developer",
   university: "Shahjalal University of Science and Technology",
   location: "Sylhet, Bangladesh",
   email: "prithiafrose@gmail.com",
@@ -14,7 +14,7 @@ export const personal = {
   availability: "Open to Internship",
   headline:
     "I'm pursuing a B.Sc. in Software Engineering at Shahjalal University of Science and Technology, passionate about turning ideas into functional, user-friendly web applications. I enjoy learning new technologies and aim to grow as a Software Engineer.",
-  roles: ["Web Developer"],
+  roles: ["Full Stack Developer", "Software Engineer", "AI/ML Enthusiast", "MERN Stack Developer", "React Developer", "Node.js Developer"],
 };
 
 export const socials = [
@@ -261,7 +261,7 @@ export const projects = [
     category: "web",
     featured: true,
     badge: "Featured",
-    image: null,
+    image: "_legacy/styles/image/Screenshot 2026-09-13 013334.png",
     description:
       "Full-stack university management platform handling academics, administration, and student lifecycle, secured with JWT role-based access and an OpenAI-powered assistant.",
     features: [
@@ -283,7 +283,7 @@ export const projects = [
     category: "web",
     featured: true,
     badge: "Featured",
-    image: null,
+    image: "/_legacy/styles/image/Screenshot 2026-09-13 013215.png",
     description:
       "Full-stack AI mock interview platform with role-based question generation, adaptive difficulty, OpenAI scoring, and a readiness analytics dashboard.",
     features: [
@@ -305,7 +305,7 @@ export const projects = [
     category: "web",
     featured: true,
     badge: "Featured",
-    image: null,
+    image: "_legacy/styles/image/Screenshot 2026-09-13 013307.png",
     description:
       "Full-stack job platform with search, applications, and role-based dashboards for Students, Recruiters, and Admins, plus an OpenAI-powered bilingual chatbot.",
     features: [
