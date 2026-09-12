@@ -9,10 +9,15 @@ export default function Footer() {
     <footer className="relative border-t border-edge">
       <div className="mx-auto max-w-6xl px-5 py-14 text-center sm:px-6">
         <a href="#top" className="inline-flex items-center gap-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent" aria-label="Back to top">
-          <img src={personal.logo} alt="" className="h-9 w-9 rounded-xl" width="36" height="36" />
+          <span
+            className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-accent to-cyan-400 font-display text-base font-bold text-white"
+            aria-hidden="true"
+          >
+            P
+          </span>
           <span className="font-display text-lg font-bold text-ink">{personal.name}</span>
         </a>
-        <p className="mt-2 text-sm text-sub">Software Engineering Student</p>
+        <p className="mt-2 text-sm text-sub">Web Developer</p>
 
         <div className="mt-6 flex items-center justify-center gap-3">
           {socials.map((social) => (

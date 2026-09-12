@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { navLinks, personal } from "../../data/portfolio";
+import { navLinks } from "../../data/portfolio";
 import { useActiveSection } from "../../hooks/useActiveSection";
 import ThemeToggle from "../ui/ThemeToggle";
 import Icon from "../ui/Icon";
@@ -58,7 +58,12 @@ export default function Navbar({ theme, onToggleTheme }) {
           className="flex items-center gap-2.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           aria-label="Prithi Afrose — home"
         >
-          <img src={personal.logo} alt="" className="h-8 w-8 rounded-lg" width="32" height="32" />
+          <span
+            className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-accent to-cyan-400 font-display text-sm font-bold text-white"
+            aria-hidden="true"
+          >
+            P
+          </span>
           <span className="font-display text-sm font-bold tracking-tight text-ink">
             Prithi<span className="text-accent">.</span>
           </span>

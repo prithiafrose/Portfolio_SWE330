@@ -24,67 +24,38 @@ export default function About() {
           sub="A quick snapshot of where I am, what I do, and what drives me."
         />
 
-        <div className="mt-16 grid grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-14">
+        <div className="mx-auto mt-16 flex max-w-3xl flex-col gap-8">
           <Reveal>
-            <div className="relative">
-              <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-accent/20 via-transparent to-cyan-400/20 blur-xl dark:from-accent/15 dark:to-cyan-500/10" />
-              <img
-                src={personal.profileImage}
-                alt="Prithi Afrose smiling in profile"
-                className="relative w-full rounded-3xl object-cover shadow-lg ring-1 ring-edge"
-                loading="lazy"
-                decoding="async"
-                width="700"
-                height="490"
-              />
-              <GlassCard
-                className="absolute bottom-4 left-4 flex items-center gap-3 px-4 py-3 sm:bottom-6 sm:left-6"
-                lift={false}
-              >
-                <span className="relative flex h-3 w-3">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-70" />
-                  <span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-500" />
-                </span>
-                <span className="text-sm font-semibold text-ink">
-                  {personal.availability}
-                </span>
-              </GlassCard>
-            </div>
+            <h3 className="font-display text-2xl font-bold tracking-tight text-ink">
+              I'm a <span className="text-accent">Web Developer</span> who loves
+              turning ideas into products that people enjoy using.
+            </h3>
+            <p className="mt-4 text-base leading-relaxed text-sub">
+              I'm passionate about building interactive, user-friendly web applications. I love
+              taking an idea and turning it into a functional product — and I'm
+              constantly learning to do it better.
+            </p>
           </Reveal>
 
-          <div className="flex flex-col gap-8">
-            <Reveal>
-              <h3 className="font-display text-2xl font-bold tracking-tight text-ink">
-                I'm a <span className="text-accent">Software Engineering student</span> who loves
-                turning ideas into products that people enjoy using.
-              </h3>
-              <p className="mt-4 text-base leading-relaxed text-sub">
-                I'm passionate about building interactive web apps and mobile solutions. I love
-                taking an idea and turning it into a functional, user-friendly product — and I'm
-                constantly learning to do it better.
-              </p>
-            </Reveal>
-
-            <Reveal>
-              <ul className="flex flex-col gap-3">
-                {aboutHighlights.map((h) => (
-                  <li key={h.label} className="flex items-start gap-3">
-                    <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent-soft text-accent">
-                      <Icon name={h.icon} size={17} />
-                    </span>
-                    <div>
-                      <span className="block text-xs font-medium text-mute">{h.label}</span>
-                      <span className="text-sm font-semibold text-ink">{h.value}</span>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-          </div>
+          <Reveal>
+            <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {aboutHighlights.map((h) => (
+                <li key={h.label} className="flex items-start gap-3">
+                  <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent-soft text-accent">
+                    <Icon name={h.icon} size={17} />
+                  </span>
+                  <div>
+                    <span className="block text-xs font-medium text-mute">{h.label}</span>
+                    <span className="text-sm font-semibold text-ink">{h.value}</span>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
         </div>
 
         <StaggerGroup
-          className="mt-14 grid grid-cols-2 gap-4 lg:grid-cols-4"
+          className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-3"
           stagger={0.06}
         >
           {stats.map((stat) => (

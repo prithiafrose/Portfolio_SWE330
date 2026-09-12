@@ -1,25 +1,20 @@
 export const personal = {
   name: "Prithi Afrose",
   firstName: "Prithi",
-  role: "Software Engineering Student",
+  role: "Web Developer",
   university: "Shahjalal University of Science and Technology",
   location: "Sylhet, Bangladesh",
   email: "prithiafrose@gmail.com",
   phone: "+880 1747 863344",
   phoneRaw: "+8801747863344",
-  resume: "/images/cv.pdf",
+  resume: "/images/resume.pdf",
   profileImage: "/images/profile.jpg",
   logo: "/images/logo.png",
   avatarAlt: "Portrait of Prithi Afrose",
   availability: "Open to Internship",
   headline:
-    "I'm a Software Engineering student at Shahjalal University of Science and Technology, passionate about turning ideas into functional, user-friendly software — from responsive web apps and mobile solutions to playful game projects. I enjoy learning new technologies and I'm aiming for a career as a Software Engineer.",
-  roles: [
-    "Software Engineering Student",
-    "Aspiring Software Engineer",
-    "Web & Mobile App Developer",
-    "Game Development Enthusiast",
-  ],
+    "I'm pursuing a B.Sc. in Software Engineering at Shahjalal University of Science and Technology, passionate about turning ideas into functional, user-friendly web applications. I enjoy learning new technologies and aim to grow as a Software Engineer.",
+  roles: ["Web Developer"],
 };
 
 export const socials = [
@@ -73,9 +68,8 @@ export const navLinks = [
 ];
 
 export const stats = [
-  { label: "CGPA", value: "3.73", sub: "B.Sc. Software Engineering" },
   { label: "Projects Completed", value: "6+", sub: "Web, mobile & games" },
-  { label: "Technologies", value: "15+", sub: "Across every layer" },
+  { label: "Technologies", value: "25+", sub: "Across every layer" },
   { label: "Internship Ready", value: "Yes", sub: "Available now" },
 ];
 
@@ -149,15 +143,27 @@ export const education = [
 
 export const skillCategories = [
   {
+    id: "languages",
+    label: "Languages",
+    icon: "braces",
+    description: "Programming languages I build with.",
+    skills: [
+      { name: "JavaScript", level: 80 },
+      { name: "Python", level: 72 },
+      { name: "Java", level: 66 },
+      { name: "C++", level: 62 },
+    ],
+  },
+  {
     id: "frontend",
     label: "Frontend",
     icon: "monitor",
     description: "Building responsive, accessible, user-friendly interfaces.",
     skills: [
-      { name: "HTML", level: 92 },
-      { name: "CSS", level: 88 },
-      { name: "JavaScript", level: 78 },
-      { name: "Responsive Design", level: 90 },
+      { name: "React.js", level: 80 },
+      { name: "Tailwind CSS", level: 84 },
+      { name: "Vite", level: 74 },
+      { name: "React Router", level: 72 },
     ],
   },
   {
@@ -166,10 +172,10 @@ export const skillCategories = [
     icon: "server",
     description: "Designing APIs and server-side logic.",
     skills: [
-      { name: "Node.js", level: 72 },
-      { name: "Express", level: 70 },
-      { name: "REST APIs", level: 74 },
-      { name: "Authentication (JWT)", level: 68 },
+      { name: "Node.js", level: 76 },
+      { name: "Express.js", level: 74 },
+      { name: "REST API", level: 76 },
+      { name: "JWT", level: 70 },
     ],
   },
   {
@@ -178,55 +184,67 @@ export const skillCategories = [
     icon: "database",
     description: "Modeling and querying relational data.",
     skills: [
-      { name: "PostgreSQL", level: 68 },
-      { name: "MySQL", level: 66 },
-      { name: "Prisma ORM", level: 66 },
-      { name: "Firebase", level: 74 },
+      { name: "PostgreSQL", level: 70 },
+      { name: "MySQL", level: 68 },
+      { name: "Prisma ORM", level: 68 },
     ],
   },
   {
     id: "ai",
     label: "AI/ML",
     icon: "brain",
-    description: "Exploring intelligent features and models.",
+    description: "Data science and machine learning with Python.",
     skills: [
-      { name: "AI Integration", level: 62 },
-      { name: "Prompt Engineering", level: 68 },
-      { name: "Machine Learning Basics", level: 55 },
+      { name: "NumPy", level: 62 },
+      { name: "Pandas", level: 60 },
+      { name: "Scikit-learn", level: 58 },
+      { name: "TensorFlow / Keras", level: 55 },
     ],
   },
   {
     id: "tools",
     label: "Tools",
     icon: "wrench",
-    description: "Version control and project collaboration.",
+    description: "Version control, APIs, and project workflow.",
     skills: [
-      { name: "Git", level: 82 },
-      { name: "GitHub", level: 84 },
-      { name: "Game Logic & Design", level: 70 },
+      { name: "Git", level: 85 },
+      { name: "GitHub", level: 86 },
+      { name: "Postman", level: 72 },
+      { name: "Vercel", level: 74 },
+      { name: "VS Code", level: 88 },
+      { name: "Google Colab", level: 62 },
+      { name: "Recharts", level: 60 },
     ],
   },
 ];
 
 export const marqueeTechnologies = [
-  "React",
+  "JavaScript",
+  "Python",
+  "Java",
+  "C++",
+  "React.js",
+  "Tailwind CSS",
+  "Vite",
+  "React Router",
   "Node.js",
-  "Express",
+  "Express.js",
+  "REST API",
+  "JWT",
   "PostgreSQL",
   "MySQL",
-  "Prisma",
-  "Firebase",
-  "OpenAI",
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "Tailwind CSS",
-  "REST APIs",
+  "Prisma ORM",
+  "NumPy",
+  "Pandas",
+  "Scikit-learn",
+  "TensorFlow",
   "Git",
   "GitHub",
-  "Android",
-  "iOS",
-  "AI/ML",
+  "Postman",
+  "Vercel",
+  "VS Code",
+  "Google Colab",
+  "Recharts",
 ];
 
 export const learningChips = ["AI/ML", "Backend Architecture", "Cyber Security"];
