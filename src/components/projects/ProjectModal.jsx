@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { motion, useReducedMotion } from "framer-motion";
 import Icon from "../ui/Icon";
+import { ProjectCover } from "./ProjectCard";
 
 const categoryLabels = {
   web: "Web App",
@@ -83,14 +84,7 @@ export default function ProjectModal({ project, onClose }) {
         </div>
 
         <div className="relative mt-5 overflow-hidden rounded-2xl">
-          <img
-            src={project.image}
-            alt={`${project.title} preview`}
-            className="w-full object-cover"
-            width="1200"
-            height="675"
-            decoding="async"
-          />
+          <ProjectCover project={project} className="aspect-[16/7]" />
         </div>
 
         <h3 className="mt-5 font-display text-2xl font-bold text-ink">{project.title}</h3>
@@ -143,7 +137,7 @@ export default function ProjectModal({ project, onClose }) {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-xl bg-accent px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-accent-hover"
               >
-                <Icon name="external" size={16} /> Live Demo
+                <Icon name="external" size={16} /> Live Site
               </a>
             )}
           </div>

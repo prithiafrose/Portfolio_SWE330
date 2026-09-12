@@ -141,21 +141,21 @@ export const whatIDo = [
     title: "Web Development",
     description:
       "Creating user-friendly, responsive, and visually appealing websites that help businesses establish a strong online presence.",
-    link: "https://github.com/prithiafrose/project-111",
+    link: "https://github.com/prithiafrose/EduCore",
   },
   {
     icon: "smartphone",
     title: "App Development",
     description:
       "Developing custom mobile apps for Android and iOS, making services and products easy to access on the go.",
-    link: "https://github.com/prithiafrose/MyprojectElevatex",
+    link: "https://github.com/prithiafrose/PrepAI",
   },
   {
     icon: "gamepad",
     title: "Game Development",
     description:
       "Designing creative and engaging games using modern technology to provide entertainment that keeps users hooked.",
-    link: "https://github.com/prithiafrose/BlackJack",
+    link: "https://github.com/prithiafrose/CareerBridge",
   },
 ];
 
@@ -249,23 +249,17 @@ export const metrics = [
   { value: "4", label: "Primary Languages" },
 ];
 
-export const projectFilters = [
-  { id: "all", label: "All" },
-  { id: "web", label: "Web Apps" },
-  { id: "app", label: "Mobile Apps" },
-  { id: "game", label: "Games" },
-];
-
 export const projects = [
   {
     id: "educore",
     title: "EduCore",
+    tagline: "University ERP System",
     category: "web",
     featured: true,
     badge: "Featured",
-    image: "/images/work-1.jpg",
+    image: null,
     description:
-      "University ERP System — a full-stack university management platform handling academics, administration, and student lifecycle, secured with JWT role-based access and an OpenAI-powered assistant.",
+      "Full-stack university management platform handling academics, administration, and student lifecycle, secured with JWT role-based access and an OpenAI-powered assistant.",
     features: [
       "Full-stack university management platform handling academics, administration, and student lifecycle",
       "JWT + bcrypt authentication with role-based access (Admin, Teacher, Student)",
@@ -274,19 +268,20 @@ export const projects = [
       "Prisma ORM with PostgreSQL, file uploads via Multer, and RESTful API architecture",
       "Deployed on Vercel (React frontend) and Render (Node.js/Express backend + PostgreSQL)",
     ],
-    tech: ["React", "Node.js", "Express", "PostgreSQL", "Prisma ORM", "Multer"],
+    tech: ["React", "Node.js", "Express", "PostgreSQL", "Prisma ORM"],
     github: "https://github.com/prithiafrose/EduCore",
     demo: "https://edu-core-prap-ai.vercel.app/",
   },
   {
     id: "prepai",
     title: "PrepAI",
+    tagline: "AI Interview Coach",
     category: "web",
     featured: true,
     badge: "Featured",
-    image: "/images/work-2.jpg",
+    image: null,
     description:
-      "AI Interview Coach — a full-stack mock interview platform with role-based question generation, adaptive difficulty, OpenAI scoring, and a readiness analytics dashboard.",
+      "Full-stack AI mock interview platform with role-based question generation, adaptive difficulty, OpenAI scoring, and a readiness analytics dashboard.",
     features: [
       "Full-stack AI mock interview platform with role-based question generation and adaptive difficulty",
       "OpenAI-powered answer evaluation with 5-dimension scoring, feedback, strengths, weaknesses, and model answers",
@@ -302,12 +297,13 @@ export const projects = [
   {
     id: "hireway",
     title: "HireWaY",
+    tagline: "Job Portal",
     category: "web",
     featured: true,
     badge: "Featured",
-    image: "/images/work-3.jpg",
+    image: null,
     description:
-      "Job Portal — a full-stack job platform with search, applications, and role-based dashboards for Students, Recruiters, and Admins, plus an OpenAI-powered bilingual chatbot.",
+      "Full-stack job platform with search, applications, and role-based dashboards for Students, Recruiters, and Admins, plus an OpenAI-powered bilingual chatbot.",
     features: [
       "Full-stack job portal with job search, applications, and role-based dashboards for Students, Recruiters, and Admins",
       "JWT authentication with role-based access control",
@@ -319,51 +315,6 @@ export const projects = [
     tech: ["Node.js", "Express", "MySQL", "Cloudinary", "OpenAI GPT-4o-mini"],
     github: "https://github.com/prithiafrose/CareerBridge",
     demo: "https://careerbridge-frontend-orpin.vercel.app/",
-  },
-  {
-    id: "shopping",
-    title: "Shopping Website",
-    category: "web",
-    featured: false,
-    image: "/images/work-1.jpg",
-    description:
-      "An online vegetable store where customers can browse products, compare prices, and buy directly from the website.",
-    features: [
-      "Browse vegetables & pricing",
-      "Buy directly from the website",
-      "Responsive, user-friendly layout",
-    ],
-    tech: ["HTML", "CSS", "Responsive Design"],
-    github: "https://github.com/prithiafrose/shop",
-    demo: null,
-  },
-  {
-    id: "jobapp",
-    title: "Job Searching App",
-    category: "app",
-    featured: false,
-    image: "/images/work-2.jpg",
-    description:
-      "A mobile app that helps people find their desired job based on their skills and qualifications.",
-    features: [
-      "Search jobs by skills & qualifications",
-      "Built for Android & iOS",
-    ],
-    tech: ["Firebase", "Android", "iOS"],
-    github: "https://github.com/prithiafrose/MyprojectElevatex",
-    demo: null,
-  },
-  {
-    id: "snake",
-    title: "Snake Game",
-    category: "game",
-    featured: false,
-    image: "/images/work-3.jpg",
-    description: "A classic snake game remake designed for thrilling, addictive gameplay.",
-    features: ["Classic snake gameplay", "Engaging difficulty curve"],
-    tech: ["Game Development"],
-    github: "https://github.com/prithiafrose/SNAKE_GAME-2.0",
-    demo: null,
   },
 ];
 
