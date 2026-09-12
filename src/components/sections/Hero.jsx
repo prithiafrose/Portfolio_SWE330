@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { personal, socials, interests } from "../../data/portfolio";
+import { personal, socials } from "../../data/portfolio";
 import AnimatedButton from "../ui/AnimatedButton";
 import SocialButton from "../ui/SocialButton";
 import Reveal from "../ui/Reveal";
@@ -77,25 +77,9 @@ export default function Hero() {
           </Reveal>
 
           <Reveal delay={0.25}>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {interests.map((interest) => (
-                <span
-                  key={interest}
-                  className="rounded-lg border border-edge bg-surface px-3 py-1.5 text-xs font-medium text-sub"
-                >
-                  {interest}
-                </span>
-              ))}
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.3}>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <AnimatedButton href="#projects" variant="primary" size="lg">
                 View Projects <Icon name="arrowRight" size={16} />
-              </AnimatedButton>
-              <AnimatedButton href={personal.resume} variant="secondary" size="lg">
-                Download Resume <Icon name="download" size={16} />
               </AnimatedButton>
               <AnimatedButton href="#contact" variant="ghost" size="lg">
                 Contact Me

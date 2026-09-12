@@ -56,8 +56,6 @@ export const socials = [
   },
 ];
 
-export const interests = ["Web Apps", "Mobile Apps", "Game Development"];
-
 export const navLinks = [
   { label: "Home", href: "#top" },
   { label: "About", href: "#about" },

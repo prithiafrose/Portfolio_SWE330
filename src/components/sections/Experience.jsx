@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
-import { experience, education, personal, metrics } from "../../data/portfolio";
+import { experience, education, metrics } from "../../data/portfolio";
 import Reveal, { StaggerGroup, StaggerItem } from "../ui/Reveal";
 import GlassCard from "../ui/GlassCard";
 import SectionTitle from "../ui/SectionTitle";
-import AnimatedButton from "../ui/AnimatedButton";
 import Icon from "../ui/Icon";
 
 const iconByKind = {
@@ -178,20 +177,6 @@ export default function Experience() {
                   </li>
                 </ul>
               </GlassCard>
-            </Reveal>
-
-            <Reveal delay={0.15}>
-              <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-accent/60 via-transparent to-cyan-400/30 p-px">
-                <div className="flex flex-col items-start gap-4 rounded-[calc(1.5rem-1px)] bg-bg p-6">
-                  <p className="text-lg font-bold text-ink">Want the full story?</p>
-                  <p className="text-sm text-sub">
-                    {personal.availability} — download my resume for the complete picture.
-                  </p>
-                  <AnimatedButton href={personal.resume} variant="primary" size="sm">
-                    Download Resume <Icon name="download" size={14} />
-                  </AnimatedButton>
-                </div>
-              </div>
             </Reveal>
           </div>
         </div>

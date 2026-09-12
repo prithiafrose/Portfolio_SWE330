@@ -20,6 +20,12 @@ const infoCards = [
     href: `tel:${personal.phoneRaw}`,
   },
   {
+    icon: "linkedin",
+    label: "LinkedIn",
+    value: "prithi-afrose-152220393",
+    href: "https://www.linkedin.com/in/prithi-afrose-152220393",
+  },
+  {
     icon: "mapPin",
     label: "Location",
     value: personal.location,

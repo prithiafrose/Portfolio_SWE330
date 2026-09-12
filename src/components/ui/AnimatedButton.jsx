@@ -33,6 +33,9 @@ export default function AnimatedButton({
     </Magnetic>
   );
 
+  const isExternal =
+    href && /^(https?:|mailto:|tel:|sms:)/i.test(href);
+
   if (href) {
     return (
       <a
@@ -41,7 +44,7 @@ export default function AnimatedButton({
         className={classes}
         download={download}
         aria-label={ariaLabel}
-        {...(newTab && !download
+        {...(newTab && !download && isExternal
           ? { target: "_blank", rel: "noopener noreferrer" }
           : {})}
       >
