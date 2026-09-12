@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prithi Afrose | Software Engineering Student</title>
+    <meta name="description" content="Portfolio of Prithi Afrose — Software Engineering student at Shahjalal University of Science and Technology, building web apps, mobile apps, and games.">
+    <meta name="theme-color" content="#0b0d12">
+
+    <meta property="og:title" content="Prithi Afrose | Software Engineering Student">
+    <meta property="og:description" content="Software Engineering student building web apps, mobile apps, and games.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://prithi-afrose-portfolio.vercel.app/">
+    <meta property="og:image" content="https://prithi-afrose-portfolio.vercel.app/styles/image/WhatsApp Image 2025-07-10 at 03.20.37_e196142a.jpg">
+    <meta name="twitter:card" content="summary">
+
+    <link rel="icon" href="styles/image/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://kit.fontawesome.com/3fbe008366.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <header class="site-header" id="siteHeader">
+        <div class="header-inner">
+            <a href="#top" class="brand" aria-label="Prithi Afrose — home">
+                <img src="styles/image/logo.png" alt="Prithi Afrose logo" class="logo">
+            </a>
+
+            <nav class="site-nav" aria-label="Primary">
+                <ul class="nav-list" id="navList">
+                    <li><a href="#top" class="nav-link active-link" aria-current="true">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#portfolio" class="nav-link">Projects</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li class="nav-close"><button id="navClose" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button id="mode-toggle" class="icon-btn theme-toggle" aria-label="Switch to light mode">☀️</button>
+                <button id="menuToggle" class="icon-btn menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="navList"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="hero" id="top" aria-label="Introduction">
+            <div class="hero-glow" aria-hidden="true"></div>
+            <div class="container hero-grid">
+                <div class="hero-copy reveal">
+                    <p class="eyebrow reveal">Software Engineering Student · SUST</p>
+                    <h1 class="hero-title reveal">Hi, I'm <span class="accent">Prithi Afrose</span></h1>
+                    <p class="hero-role reveal"><span id="typedText" class="typed-text"></span></p>
+                    <p class="hero-intro reveal">
+                        I'm a Software Engineering student at Shahjalal University of Science and Technology,
+                        passionate about turning ideas into functional, user-friendly software — from responsive
+                        web apps and mobile solutions to playful game projects. I enjoy learning new technologies
+                        and I'm aiming for a career as a Software Engineer.
+                    </p>
+                    <ul class="hero-interests reveal" aria-label="Areas of interest">
+                        <li>Web Apps</li>
+                        <li>Mobile Apps</li>
+                        <li>Game Development</li>
+                    </ul>
+                    <div class="hero-cta reveal">
+                        <a href="#portfolio" class="btn btn-primary">View Projects <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                        <a href="styles/image/prithi_afrose_colorful_cv.pdf" class="btn btn-ghost" target="_blank" rel="noopener">View Resume <i class="fa-solid fa-file-lines" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+
+                <div class="hero-photo-wrap reveal">
+                    <div class="hero-photo">
+                        <img src="styles/image/WhatsApp Image 2025-07-10 at 03.20.37_e196142a.jpg"
+                             alt="Portrait of Prithi Afrose"
+                             class="hero-img"
+                             width="900" height="1200"
+                             fetchpriority="high">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section about" id="about" aria-labelledby="about-title">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-photo reveal">
+                        <img src="styles/image/WhatsApp Image 2025-07-10 at 03.20.37_e196142a.jpg"
+                             alt="Prithi Afrose smiling in profile"
+                             class="about-img"
+                             loading="lazy" decoding="async"
+                             width="900" height="1200">
+                    </div>
+
+                    <div class="about-body">
+                        <h2 class="section-title reveal" id="about-title">About Me</h2>
+                        <p class="about-text reveal">
+                            I'm a <strong>Software Engineering student</strong> passionate about building
+                            interactive web apps and mobile solutions. I love taking an idea and turning it
+                            into a functional, user-friendly product — and I'm constantly learning to do it better.
+                        </p>
+
+                        <ul class="about-highlights reveal">
+                            <li>
+                                <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                                <div>
+                                    <span class="hl-label">Currently studying</span>
+                                    <span class="hl-value">Software Engineering @ SUST</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-code" aria-hidden="true"></i>
+                                <div>
+                                    <span class="hl-label">Development focus</span>
+                                    <span class="hl-value">Web &amp; Mobile Applications</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+                                <div>
+                                    <span class="hl-label">Learning mindset</span>
+                                    <span class="hl-value">Always exploring new technologies</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
+                                <div>
+                                    <span class="hl-label">Career goal</span>
+                                    <span class="hl-value">Software Engineer</span>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="timeline-tabs reveal" role="tablist" aria-label="Background">
+                            <button class="tab-btn active" role="tab" aria-selected="true" data-tab="experience">Experience</button>
+                            <button class="tab-btn" role="tab" aria-selected="false" data-tab="education">Education</button>
+                        </div>
+
+                        <div class="timeline-panel" id="experience" role="tabpanel">
+                            <div class="timeline-item">
+                                <span class="tl-date">2023 — Current</span>
+                                <h3 class="tl-title">Post-Graduation</h3>
+                                <p class="tl-text">Shahjalal University of Science and Technology</p>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="tl-date">2024</span>
+                                <h3 class="tl-title">National case competition — Mindmaster 2.0</h3>
+                                <p class="tl-text">Participant</p>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="tl-date">2019</span>
+                                <h3 class="tl-title">Math Olympiad</h3>
+                                <p class="tl-text">Participant</p>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="tl-date">2016</span>
+                                <h3 class="tl-title">National Debate Competition</h3>
+                                <p class="tl-text">Participant</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-panel" id="education" role="tabpanel" hidden>
+                            <div class="timeline-item">
+                                <span class="tl-date">2023 — Present</span>
+                                <h3 class="tl-title">B.Sc. in Software Engineering</h3>
+                                <p class="tl-text">Shahjalal University of Science and Technology</p>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="tl-date">2020 — 2022</span>
+                                <h3 class="tl-title">Higher Secondary Certificate (HSC)</h3>
+                                <p class="tl-text">Dinajpur Govt. College</p>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="tl-date">2011 — 2019</span>
+                                <h3 class="tl-title">Secondary School Certificate (SSC)</h3>
+                                <p class="tl-text">Dinajpur Govt. Girls' High School</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section skills" id="skills" aria-labelledby="skills-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <h2 class="section-title" id="skills-title">Skills</h2>
+                    <p class="section-sub">The technologies and tools I work with while building software.</p>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-card reveal">
+                        <div class="skill-head">
+                            <i class="fa-solid fa-window-maximize" aria-hidden="true"></i>
+                            <h3>Frontend Development</h3>
+                        </div>
+                        <p class="skill-desc">Building responsive, accessible, user-friendly interfaces.</p>
+                        <ul class="skill-badges">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Responsive Design</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card reveal" data-delay="80">
+                        <div class="skill-head">
+                            <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
+                            <h3>Mobile Development</h3>
+                        </div>
+                        <p class="skill-desc">Developing applications that run on Android and iOS.</p>
+                        <ul class="skill-badges">
+                            <li>Android</li>
+                            <li>iOS</li>
+                            <li>Firebase</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card reveal" data-delay="160">
+                        <div class="skill-head">
+                            <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+                            <h3>Game Development</h3>
+                        </div>
+                        <p class="skill-desc">Designing creative, engaging game projects.</p>
+                        <ul class="skill-badges">
+                            <li>Game Design</li>
+                            <li>Game Logic</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card reveal" data-delay="240">
+                        <div class="skill-head">
+                            <i class="fa-solid fa-toolbox" aria-hidden="true"></i>
+                            <h3>Tools &amp; Workflow</h3>
+                        </div>
+                        <p class="skill-desc">Version control and project collaboration.</p>
+                        <ul class="skill-badges">
+                            <li>Git</li>
+                            <li>GitHub</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section service" id="service" aria-labelledby="service-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <h2 class="section-title" id="service-title">What I Do</h2>
+                    <p class="section-sub">Where I focus my energy right now.</p>
+                </div>
+
+                <div class="service-grid">
+                    <article class="service-card reveal">
+                        <i class="fa-solid fa-code" aria-hidden="true"></i>
+                        <h3>Web Development</h3>
+                        <p>Creating user-friendly, responsive, and visually appealing websites that help businesses establish a strong online presence.</p>
+                        <a href="https://github.com/prithiafrose/project-111" target="_blank" rel="noopener">Example work <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    </article>
+
+                    <article class="service-card reveal" data-delay="80">
+                        <i class="fa-brands fa-app-store" aria-hidden="true"></i>
+                        <h3>App Development</h3>
+                        <p>Developing custom mobile apps for Android and iOS, making services and products easy to access on the go.</p>
+                        <a href="https://github.com/prithiafrose/MyprojectElevatex" target="_blank" rel="noopener">Example work <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    </article>
+
+                    <article class="service-card reveal" data-delay="160">
+                        <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+                        <h3>Game Development</h3>
+                        <p>Designing creative and engaging games using modern technology to provide entertainment that keeps users hooked.</p>
+                        <a href="https://github.com/prithiafrose/BlackJack" target="_blank" rel="noopener">Example work <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section portfolio" id="portfolio" aria-labelledby="portfolio-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <h2 class="section-title" id="portfolio-title">Projects</h2>
+                    <p class="section-sub">A selection of things I've built. Source code is on GitHub.</p>
+                </div>
+
+                <div class="filters reveal" role="group" aria-label="Filter projects">
+                    <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+                    <button class="filter-btn" data-filter="web" aria-pressed="false">Web Apps</button>
+                    <button class="filter-btn" data-filter="app" aria-pressed="false">Mobile Apps</button>
+                    <button class="filter-btn" data-filter="game" aria-pressed="false">Games</button>
+                </div>
+
+                <div class="projects-grid">
+                    <article class="project-card featured reveal" data-category="web">
+                        <div class="project-media">
+                            <img src="styles/image/work-1.jpg" alt="Shopping website homepage preview" loading="lazy" decoding="async" width="1200" height="900">
+                            <span class="project-tag tag-featured">Featured</span>
+                            <span class="project-tag tag-cat">Web App</span>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-title">Shopping Website</h3>
+                            <p class="project-desc">
+                                An online vegetable store where customers can browse products, compare prices,
+                                and buy directly from the website.
+                            </p>
+                            <ul class="project-features">
+                                <li>Browse vegetables &amp; pricing</li>
+                                <li>Buy directly from the website</li>
+                                <li>Responsive, user-friendly layout</li>
+                            </ul>
+                            <ul class="tech-badges" aria-label="Technologies used">
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>Responsive Design</li>
+                            </ul>
+                            <a href="https://github.com/prithiafrose/shop" class="btn btn-small" target="_blank" rel="noopener">View Source <i class="fa-brands fa-github" aria-hidden="true"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal" data-category="app">
+                        <div class="project-media">
+                            <img src="styles/image/work-2.jpg" alt="Job searching app interface preview" loading="lazy" decoding="async" width="1200" height="800">
+                            <span class="project-tag tag-cat">Mobile App</span>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-title">Job Searching App</h3>
+                            <p class="project-desc">
+                                A mobile app that helps people find their desired job based on their skills
+                                and qualifications.
+                            </p>
+                            <ul class="project-features">
+                                <li>Search jobs by skills &amp; qualifications</li>
+                                <li>Built for Android &amp; iOS</li>
+                            </ul>
+                            <ul class="tech-badges" aria-label="Technologies used">
+                                <li>Firebase</li>
+                                <li>Android</li>
+                                <li>iOS</li>
+                            </ul>
+                            <a href="https://github.com/prithiafrose/MyprojectElevatex" class="btn btn-small" target="_blank" rel="noopener">View Source <i class="fa-brands fa-github" aria-hidden="true"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal" data-category="game">
+                        <div class="project-media">
+                            <img src="styles/image/work-3.jpg" alt="Snake game gameplay preview" loading="lazy" decoding="async" width="1200" height="800">
+                            <span class="project-tag tag-cat">Game</span>
+                        </div>
+                        <div class="project-body">
+                            <h3 class="project-title">Snake Game</h3>
+                            <p class="project-desc">
+                                A classic snake game remake designed for thrilling, addictive gameplay.
+                            </p>
+                            <ul class="project-features">
+                                <li>Classic snake gameplay</li>
+                                <li>Engaging difficulty curve</li>
+                            </ul>
+                            <ul class="tech-badges" aria-label="Technologies used">
+                                <li>Game Development</li>
+                            </ul>
+                            <a href="https://github.com/prithiafrose/SNAKE_GAME-2.0" class="btn btn-small" target="_blank" rel="noopener">View Source <i class="fa-brands fa-github" aria-hidden="true"></i></a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="projects-more reveal">
+                    <a href="https://github.com/prithiafrose" class="btn btn-secondary" target="_blank" rel="noopener">More on GitHub <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact" id="contact" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <h2 class="section-title" id="contact-title">Contact</h2>
+                    <p class="section-sub">Open to internship and entry-level opportunities. Say hello!</p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info reveal">
+                        <a class="contact-item" href="mailto:prithiafrose@gmail.com">
+                            <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+                            <span>
+                                <span class="ci-label">Email</span>
+                                <span class="ci-value">prithiafrose@gmail.com</span>
+                            </span>
+                        </a>
+                        <a class="contact-item" href="tel:+8801747863344">
+                            <i class="fa-solid fa-phone-volume" aria-hidden="true"></i>
+                            <span>
+                                <span class="ci-label">Phone</span>
+                                <span class="ci-value">+880 1747 863344</span>
+                            </span>
+                        </a>
+
+                        <ul class="social-list" aria-label="Social links">
+                            <li><a href="https://github.com/prithiafrose" aria-label="GitHub profile" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.facebook.com/share/14NHTLLkyXZ/" aria-label="Facebook profile" target="_blank" rel="noopener"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.instagram.com/prithi_afroz?igsh=MXNidDZyeG5qbzFmdw==" aria-label="Instagram profile" target="_blank" rel="noopener"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.snapchat.com/add/prithiafrose" aria-label="Snapchat profile" target="_blank" rel="noopener"><i class="fa-brands fa-snapchat" aria-hidden="true"></i></a></li>
+                        </ul>
+
+                        <a href="styles/image/prithi_afrose_colorful_cv.pdf" download class="btn btn-primary">Download Resume <i class="fa-solid fa-download" aria-hidden="true"></i></a>
+                    </div>
+
+                    <form class="contact-form reveal" id="contact-form" data-delay="80">
+                        <div class="field">
+                            <label for="cf-name">Your name</label>
+                            <input type="text" id="cf-name" name="Name" placeholder="Jane Doe" required autocomplete="name">
+                        </div>
+                        <div class="field">
+                            <label for="cf-email">Your email</label>
+                            <input type="email" id="cf-email" name="Email" placeholder="jane@example.com" required autocomplete="email">
+                        </div>
+                        <div class="field">
+                            <label for="cf-message">Message</label>
+                            <textarea id="cf-message" name="Message" rows="5" placeholder="Tell me about your opportunity…" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message <i class="fa-solid fa-paper-plane" aria-hidden="true"></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p class="footer-brand">Prithi Afrose</p>
+            <p class="footer-role">Software Engineering Student</p>
+            <ul class="social-list footer-socials" aria-label="Social links">
+                <li><a href="https://github.com/prithiafrose" aria-label="GitHub profile" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.facebook.com/share/14NHTLLkyXZ/" aria-label="Facebook profile" target="_blank" rel="noopener"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.instagram.com/prithi_afroz?igsh=MXNidDZyeG5qbzFmdw==" aria-label="Instagram profile" target="_blank" rel="noopener"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.snapchat.com/add/prithiafrose" aria-label="Snapchat profile" target="_blank" rel="noopener"><i class="fa-brands fa-snapchat" aria-hidden="true"></i></a></li>
+            </ul>
+            <p class="footer-copy">© <span id="year">2026</span> Prithi Afrose · Made with <i class="fa-solid fa-heart" aria-hidden="true"></i> in Bangladesh</p>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
