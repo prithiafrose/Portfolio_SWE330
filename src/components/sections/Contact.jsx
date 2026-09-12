@@ -36,22 +36,52 @@ const infoCards = [
 export default function Contact() {
   const [status, setStatus] = useState({ sent: false, message: "" });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.currentTarget;
     if (!form.reportValidity()) return;
+
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+    if (!accessKey) {
+      setStatus({
+        sent: false,
+        message: "Form not configured yet — the site owner needs to set the Web3Forms key.",
+      });
+      return;
+    }
 
     const name = form.elements.name.value.trim();
     const email = form.elements.email.value.trim();
     const message = form.elements.message.value.trim();
 
-    const subject = encodeURIComponent(`Portfolio message from ${name}`);
-    const body = encodeURIComponent(`${message}\n\nFrom: ${email}`);
-    window.location.href = `mailto:${personal.email}?subject=${subject}&body=${body}`;
+    setStatus({ sent: false, message: "Sending…" });
 
-    setStatus({ sent: true, message: "Opening your email app…" });
-    form.reset();
-    setTimeout(() => setStatus({ sent: false, message: "" }), 4000);
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name,
+          email,
+          message,
+          subject: `Portfolio message from ${name}`,
+          from_name: name,
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setStatus({ sent: true, message: "Message sent — I'll get back to you soon!" });
+        form.reset();
+      } else {
+        setStatus({ sent: false, message: "Something went wrong. Please try again." });
+      }
+    } catch {
+      setStatus({ sent: false, message: "Network error. Please try again." });
+    }
+
+    setTimeout(() => setStatus({ sent: false, message: "" }), 5000);
   };
 
   return (
@@ -172,7 +202,12 @@ export default function Contact() {
                 Send Message <Icon name="send" size={15} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </button>
               {status.sent && (
-                <p role="status" aria-live="polite" className="text-sm font-medium text-accent">
+                <p role="status" aria-live="polite" className="text-sm font-medium text-emerald-500">
+                  {status.message}
+                </p>
+              )}
+              {!status.sent && status.message && (
+                <p role="status" aria-live="polite" className="text-sm font-medium text-red-500">
                   {status.message}
                 </p>
               )}
