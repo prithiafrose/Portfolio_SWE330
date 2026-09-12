@@ -30,6 +30,18 @@ export const socials = [
     icon: "github",
   },
   {
+    id: "linkedin",
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/prithi-afrose-152220393",
+    icon: "linkedin",
+  },
+  {
+    id: "whatsapp",
+    label: "WhatsApp",
+    href: "https://wa.me/8801747863344",
+    icon: "whatsapp",
+  },
+  {
     id: "facebook",
     label: "Facebook",
     href: "https://www.facebook.com/share/14NHTLLkyXZ/",
@@ -132,30 +144,6 @@ export const education = [
     date: "2011 — 2019",
     title: "Secondary School Certificate (SSC)",
     org: "Dinajpur Govt. Girls' High School",
-  },
-];
-
-export const whatIDo = [
-  {
-    icon: "code",
-    title: "Web Development",
-    description:
-      "Creating user-friendly, responsive, and visually appealing websites that help businesses establish a strong online presence.",
-    link: "https://github.com/prithiafrose/EduCore",
-  },
-  {
-    icon: "smartphone",
-    title: "App Development",
-    description:
-      "Developing custom mobile apps for Android and iOS, making services and products easy to access on the go.",
-    link: "https://github.com/prithiafrose/PrepAI",
-  },
-  {
-    icon: "gamepad",
-    title: "Game Development",
-    description:
-      "Designing creative and engaging games using modern technology to provide entertainment that keeps users hooked.",
-    link: "https://github.com/prithiafrose/CareerBridge",
   },
 ];
 

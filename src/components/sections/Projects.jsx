@@ -30,15 +30,16 @@ export default function Projects() {
           sub="Three full-stack products, live on the web. Source code is on GitHub — tap any project for details."
         />
 
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <StaggerGroup className="contents" stagger={0.08}>
-            {visible.map((project) => (
-              <StaggerItem key={project.id}>
-                <ProjectCard project={project} onOpen={setSelected} />
-              </StaggerItem>
-            ))}
-          </StaggerGroup>
-        </div>
+        <StaggerGroup
+          className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          stagger={0.08}
+        >
+          {visible.map((project) => (
+            <StaggerItem key={project.id}>
+              <ProjectCard project={project} onOpen={setSelected} />
+            </StaggerItem>
+          ))}
+        </StaggerGroup>
 
         <Reveal className="mt-12 text-center">
           <AnimatedButton href="https://github.com/prithiafrose" variant="secondary" size="md">

@@ -91,9 +91,31 @@ function SnapchatIcon({ size = 20, className = "" }) {
   );
 }
 
+function WhatsAppIcon({ size = 20, className = "" }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M3 21l1.65-4.3A8 8 0 1 1 7.3 19.35L3 21Zm8.5-13.6c.8 1.2 1.6 2.4 1.4 3.2-.2.7-.9.9-1.2 1.2-.2.2-.3.4-.3.6.1.5.8 1.4 1.6 1.9.9.6 1.6.7 1.9.7.4 0 .6-.1.9-.3.2-.2.4-.5.6-.8.3-.2.6-.4.8-.2.8.4 1.6 1 2.2 1.6.4.4.4.9.1 1.2-.1.1-.2.8-1.8 1.4-1.6.6-3 .5-4.2 0-1.5-.6-3-1.7-4.1-3.3-1.1-1.6-1.7-3-1.9-4-.2-1.3 0-2.3.4-3 .4-.9 1.2-.9 1.6-.7.4 0 .8.4 1.2.8Z" />
+    </svg>
+  );
+}
+
 export default function Icon({ name, size = 20, className = "", strokeWidth = 2 }) {
   if (name === "snapchat") {
     return <SnapchatIcon size={size} className={className} />;
+  }
+  if (name === "whatsapp") {
+    return <WhatsAppIcon size={size} className={className} />;
   }
   const Cmp = iconMap[name];
   if (!Cmp) return null;
